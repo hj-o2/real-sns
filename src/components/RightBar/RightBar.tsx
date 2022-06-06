@@ -6,9 +6,7 @@ export const RightBar = () => {
       <div className="rightBarWrapper">
         <div className="eventContainer">
           <img src="assets/star.png" alt="スター画像" className="starImg" />
-          <span className="eventText">
-            <b>フォロワー限定</b>イベント開催中
-          </span>
+          <span className="eventText">フォロワー限定イベント開催中</span>
         </div>
         <img src="assets/event.jpeg" alt="イベント" className="eventImg" />
         <h4 className="rightBarTitle">オンラインの友達</h4>
@@ -41,7 +39,7 @@ export const RightBar = () => {
           src="assets/promotion/pro1.jpeg"
           alt="ショッピングのプロモーション広告"
           className="rightBarPromotionImg"
-        / >
+        />
         <p className="promotionName">SHOPPING</p>
         <img
           src="assets/promotion/pro2.jpeg"
