@@ -2,13 +2,15 @@ import { Users } from "../../dummyData/dummyData";
 import Online from "../Online/Online";
 import "./RightBar.css";
 
-export const RightBar = () => {
-  return (
-    <div className="rightBar">
-      <div className="rightBarWrapper">
+export const RightBar = ({ profile }) => {
+  const HomeRightBar = () => {
+    return (
+      <>
         <div className="eventContainer">
           <img src="assets/star.png" alt="スター画像" className="starImg" />
-          <span className="eventText">フォロワー限定イベント開催中</span>
+          <span className="eventText">
+            <b>フォロワー限定イベント</b> 開催中!
+          </span>
         </div>
         <img src="assets/event.jpeg" alt="イベント" className="eventImg" />
         <h4 className="rightBarTitle">オンラインの友達</h4>
@@ -36,7 +38,63 @@ export const RightBar = () => {
           className="rightBarPromotionImg"
         />
         <p className="promotionName">COMPANY</p>
-      </div>
+      </>
+    );
+  };
+
+  const ProfileRightBar = () => {
+    return (
+      <>
+        <h4 className="rightBarTitle">ユーザー情報</h4>
+        <div className="rightBarInfo">
+          <div className="rightBarInfoItem">
+            <span className="rightBarInfoKey">出身：</span>
+            <span className="rightBarInfoKey">福岡</span>
+          </div>
+          <h4 className="rightBarTitle">Your Friends</h4>
+          <div className="rightBarFollowings">
+            <div className="rightBarFollowing">
+              <img
+                src="assets/person/2.jpeg"
+                alt="フォロワー写真1"
+                className="rightBarFollowingImg"
+              />
+              <span className="rightBarFollowingName">sample2</span>
+            </div>
+            <div className="rightBarFollowing">
+              <img
+                src="assets/person/3.jpeg"
+                alt="フォロワー写真1"
+                className="rightBarFollowingImg"
+              />
+              <span className="rightBarFollowingName">sample3</span>
+            </div>
+            <div className="rightBarFollowing">
+              <img
+                src="assets/person/4.jpeg"
+                alt="フォロワー写真1"
+                className="rightBarFollowingImg"
+              />
+              <span className="rightBarFollowingName">sample4</span>
+            </div>
+            <div className="rightBarFollowing">
+              <img
+                src="assets/person/5.jpeg"
+                alt="フォロワー写真1"
+                className="rightBarFollowingImg"
+              />
+              <span className="rightBarFollowingName">sample5</span>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  };
+
+  return (
+    <div className="rightBar">
+      <div className="rightBarWrapper"></div>
+      {profile ? <ProfileRightBar /> : <HomeRightBar />}
     </div>
   );
 };

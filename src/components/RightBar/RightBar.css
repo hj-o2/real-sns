@@ -91,3 +91,43 @@
   color: #434343;
   margin-top: -20px;
 }
+
+.rightBarTitle {
+  font-size: 1.8rem;
+  font-weight: 550;
+  margin-bottom: 10px;
+}
+
+.rightBarInfo {
+  margin-bottom: 30px;
+}
+
+.rightBarInfoKey {
+  font-weight: 550;
+  margin-right: 5px;
+  color: #555;
+}
+
+.rightBarInfoItem {
+  margin-bottom: 10px;
+}
+
+.rightBarFollowings {
+  display: flex;
+  flex-wrap : wrap;
+  justify-content: space-between;
+}
+
+.rightBarFollowing {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.rightBarFollowingImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}

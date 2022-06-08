@@ -5,7 +5,7 @@ import { TimeLine } from "../../components/TimeLine/TimeLine";
 import { TopBar } from "../../components/TopBar/TopBar";
 import "./Home.css";
 
-export const Home: React.FC = () => {
+export const Home = () => {
   return (
     <>
       <TopBar />
