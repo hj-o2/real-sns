@@ -1,3 +1,5 @@
+import { Users } from "../../dummyData/dummyData";
+import Online from "../Online/Online";
 import "./RightBar.css";
 
 export const RightBar = () => {
@@ -11,28 +13,9 @@ export const RightBar = () => {
         <img src="assets/event.jpeg" alt="イベント" className="eventImg" />
         <h4 className="rightBarTitle">オンラインの友達</h4>
         <ul className="rightBarFriendList">
-          <li className="rightBarFriend">
-            <div className="rightBarProfileImgContainer">
-              <img
-                src="assets/person/2.jpeg"
-                alt="オンライン1"
-                className="rightBarProfileImg"
-              />
-              <span className="rightBarOnline"></span>
-            </div>
-            <span className="rightBarUserName">yamada</span>
-          </li>
-          <li className="rightBarFriend">
-            <div className="rightBarProfileImgContainer">
-              <img
-                src="assets/person/3.jpeg"
-                alt="オンライン2"
-                className="rightBarProfileImg"
-              />
-              <span className="rightBarOnline"></span>
-            </div>
-            <span className="rightBarUserName">tanaka</span>
-          </li>
+          {Users.map((user) => (
+            <Online user={user} key={user.id} />
+          ))}
         </ul>
         <p className="promotionTitle">PROMOTION</p>
         <img
