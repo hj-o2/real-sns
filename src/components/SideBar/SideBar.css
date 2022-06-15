@@ -30,13 +30,13 @@ aside {
 }
 
 .sideBarIcon {
-  font-size: 3.5rem !important;
+  font-size: 35px !important;
   color: #333333 !important;
   margin-right: 10px;
 }
 
 .sidebarListItemText {
-  font-size: 2rem;
+  font-size: 20px;
   padding-top: 3px;
   font-family: "Righteous", cursive;
   color: #444444;
@@ -52,10 +52,6 @@ aside {
   width: 35px;
   object-fit: cover;
   margin-right: 10px;
-}
-
-.sideBarFriendName {
-  font-size: 1.6rem;
 }
 
 .sideBarFriendList {

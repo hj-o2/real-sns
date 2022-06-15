@@ -18,18 +18,17 @@
 }
 
 .eventText {
-  font-size: 1.5rem;
+  font-size: 15px;
   font-family: "RocknRoll One", sans-serif;
 }
 
 .eventImg {
-  width: 100%;
+  width: 96%;
   border-radius: 10px;
   margin: 25px 0;
 }
 
 .rightBarTitle {
-  font-size: 1.6rem;
   margin-bottom: 20px;
 }
 
@@ -59,7 +58,6 @@
 
 .rightBarUserName {
   font-weight: 550 !important;
-  font-size: 1.6rem;
 }
 
 .rightBarOnline {
@@ -75,7 +73,7 @@
 }
 
 .promotionTitle {
-  font-size: 1.8rem;
+  font-size: 18px;
   font-weight: 550;
   margin-bottom: -10px;
 }
@@ -93,7 +91,7 @@
 }
 
 .rightBarTitle {
-  font-size: 1.8rem;
+  font-size: 18px;
   font-weight: 550;
   margin-bottom: 10px;
 }

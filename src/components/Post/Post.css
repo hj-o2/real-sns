@@ -28,21 +28,17 @@
 }
 
 .postUserName {
-  font-size: 1.5rem;
+  font-size: 15px;
   font-weight: 550;
   margin: 0 10px;
 }
 
 .postDate {
-  font-size: 1.2rem;
+  font-size: 12px;
 }
 
 .postCenter {
   margin: 20px 0;
-}
-
-.postText {
-  font-size: 1.6rem;
 }
 
 .postImg {
@@ -71,12 +67,12 @@
 }
 
 .postLikeCounter {
-  font-size: 1.5rem;
+  font-size: 15px;
 }
 
 .postCommentText {
   cursor: pointer;
   border-bottom: 1px solid gray;
-  font-size: 1.5rem;
+  font-size: 15px;
   margin-right: 3px;
 }

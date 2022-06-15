@@ -2,13 +2,15 @@ import { Analytics, Face, Gif, Image } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import "./Share.css";
 
-export const Share: React.FC = () => {
+export default function Share() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  
   return (
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
           <img
-            src="/assets/person/1.jpeg"
+            src={`${PF}/person/noAvatar.png`}
             alt="プロフィール画像"
             className="shareProfileImg"
           />
@@ -39,7 +41,7 @@ export const Share: React.FC = () => {
               <span className="shareOptionText">VOTE</span>
             </div>
           </div>
-          <Button variant="contained" className="shareButton" color="primary" >
+          <Button variant="contained" className="shareButton" color="primary">
             post
           </Button>
           {/* <button className="shareButton">post</button> */}
@@ -47,4 +49,4 @@ export const Share: React.FC = () => {
       </div>
     </div>
   );
-};
+}

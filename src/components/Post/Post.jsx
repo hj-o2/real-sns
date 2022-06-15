@@ -1,12 +1,24 @@
 import { MoreVert } from "@mui/icons-material";
-import { useState } from "react";
-import { Users } from "../../dummyData/dummyData";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { format } from "timeago.js";
 import "./Post.css";
+// import { Users } from "../../dummyData/dummyData";
 
-export const Post = ({ post }) => {
-  const user = Users.filter((user) => user.id === post.id)[0];
-  const [like, setLike] = useState(post.like);
+export default function Post({ post }) {
+  const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
+  const [users, setUsers] = useState({});
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  // const user = users.filter((user) => user.id === post.id)[0];
+
+  useEffect(() => {
+    (async () => {
+      const res = await axios.get(`/users?userId=${post.userId}`);
+      setUsers(res.data);
+    })();
+  }, [post.userId]);
 
   const handleLike = () => {
     setLike(isLiked ? like - 1 : like + 1);
@@ -18,13 +30,15 @@ export const Post = ({ post }) => {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <img
-              src={user.profilePicture}
-              alt="プロフィール画像"
-              className="postProfileImg"
-            />
-            <span className="postUserName">{user.username}</span>
-            <span className="postDate">{post.date}</span>
+            <Link to={`/profile/${users.username}`}>
+              <img
+                src={users.profilePicture || `${PF}/person/noAvatar.png`}
+                alt="プロフィール画像"
+                className="postProfileImg"
+              />
+            </Link>
+            <span className="postUserName">{users.username}</span>
+            <span className="postDate">{format(post.createdAt)}</span>
           </div>
           <div className="postTopRight">
             <MoreVert />
@@ -33,7 +47,7 @@ export const Post = ({ post }) => {
 
         <div className="postCenter">
           <span className="postText">{post.desc}</span>
-          <img src={post.photo} alt="投稿画像" className="postImg" />
+          <img src={PF + post.img} alt="投稿画像" className="postImg" />
         </div>
 
         <div className="postBottom">
@@ -55,4 +69,4 @@ export const Post = ({ post }) => {
       </div>
     </div>
   );
-};
+}

@@ -1,11 +1,14 @@
 import "./TopBar.css";
 import { Chat, Notifications, Search } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export const TopBar: React.FC = () => {
   return (
     <div className="topBarContainer">
       <div className="topBarLeft">
-        <span className="logo">Real SNS</span>
+        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+          <span className="logo">Real SNS</span>
+        </Link>
       </div>
       <div className="topBarCenter">
         <div className="searchBar">

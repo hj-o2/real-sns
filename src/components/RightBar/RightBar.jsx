@@ -2,7 +2,7 @@ import { Users } from "../../dummyData/dummyData";
 import Online from "../Online/Online";
 import "./RightBar.css";
 
-export const RightBar = ({ profile }) => {
+export default function RightBar({ users }) {
   const HomeRightBar = () => {
     return (
       <>
@@ -43,6 +43,8 @@ export const RightBar = ({ profile }) => {
   };
 
   const ProfileRightBar = () => {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
     return (
       <>
         <h4 className="rightBarTitle">ユーザー情報</h4>
@@ -55,7 +57,7 @@ export const RightBar = ({ profile }) => {
           <div className="rightBarFollowings">
             <div className="rightBarFollowing">
               <img
-                src="assets/person/2.jpeg"
+                src={`${PF}/person/2.jpeg`}
                 alt="フォロワー写真1"
                 className="rightBarFollowingImg"
               />
@@ -63,7 +65,7 @@ export const RightBar = ({ profile }) => {
             </div>
             <div className="rightBarFollowing">
               <img
-                src="assets/person/3.jpeg"
+                src={`${PF}/person/3.jpeg`}
                 alt="フォロワー写真1"
                 className="rightBarFollowingImg"
               />
@@ -71,7 +73,7 @@ export const RightBar = ({ profile }) => {
             </div>
             <div className="rightBarFollowing">
               <img
-                src="assets/person/4.jpeg"
+                src={`${PF}/person/4.jpeg`}
                 alt="フォロワー写真1"
                 className="rightBarFollowingImg"
               />
@@ -79,7 +81,7 @@ export const RightBar = ({ profile }) => {
             </div>
             <div className="rightBarFollowing">
               <img
-                src="assets/person/5.jpeg"
+                src={`${PF}/person/5.jpeg`}
                 alt="フォロワー写真1"
                 className="rightBarFollowingImg"
               />
@@ -94,7 +96,7 @@ export const RightBar = ({ profile }) => {
   return (
     <div className="rightBar">
       <div className="rightBarWrapper"></div>
-      {profile ? <ProfileRightBar /> : <HomeRightBar />}
+      {users ? <ProfileRightBar /> : <HomeRightBar />}
     </div>
   );
-};
+}
